@@ -1,72 +1,9 @@
-<!DOCTYPE html>
-<html lang="zh-Hant">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>亂叫姓名和取糕點暱稱機器人</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f0f8ff;
-      text-align: center;
-      padding: 20px;
-    }
-    .output {
-      margin-top: 20px;
-      font-size: 24px;
-      font-weight: bold;
-      color: #ff6347;
-    }
-    button {
-      padding: 10px 20px;
-      font-size: 18px;
-      background-color: #ffebcd;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #ffe4b5;
-    }
-  </style>
-</head>
-<body>
-
-  <h1>歡迎來到亂叫姓名和取糕點暱稱的聊天機器人</h1>
-  <p>按下按鈕，讓我幫你取個有趣的暱稱吧！</p>
-  <button onclick="generateNickname()">生成暱稱</button>
-
-  <div class="output" id="nicknameOutput"></div>
-
-  <script>
-    // 用來亂叫的姓名列表
-    const names = ["小明", "小華", "小莉", "小梅", "小陳", "小李", "小張", "小王", "小杜", "小蔡"];
-    
-    // 用來隨機生成的糕點名稱
-    const desserts = [
-      "蜂蜜草莓小蛋糕",
-      "香草蘋果餅乾",
-      "巧克力慕斯蛋糕",
-      "焦糖布丁",
-      "抹茶餅乾",
-      "藍莓乳酪蛋糕",
-      "檸檬瑪德蓮",
-      "覆盆子蛋塔",
-      "杏仁巧克力球",
-      "香蕉奶油麵包"
-    ];
-
-    // 生成暱稱的函數
-    function generateNickname() {
-      // 隨機選擇姓名和糕點
-      const randomName = names[Math.floor(Math.random() * names.length)];
-      const randomDessert = desserts[Math.floor(Math.random() * desserts.length)];
-
-      // 顯示生成的暱稱
-      const nickname = randomName + "的" + randomDessert;
-      document.getElementById("nicknameOutput").innerText = nickname;
-    }
-  </script>
-
-</body>
-</html>
+<?xml version="1.0" encoding="UTF-8" ?>
+<NotepadPlus>
+    <Session activeView="0">
+        <mainView activeIndex="0">
+            <File firstVisibleLine="61" xOffset="0" scrollWidth="4960" startPos="2439" endPos="2439" selMode="0" offset="0" wrapCount="1" lang="HTML" encoding="-1" userReadOnly="no" filename="C:\Users\l1-204\Desktop\index.html" backupFilePath="" originalFileLastModifTimestamp="1251751930" originalFileLastModifTimestampHigh="31175276" mapFirstVisibleDisplayLine="-1" mapFirstVisibleDocLine="-1" mapLastVisibleDocLine="-1" mapNbLine="-1" mapHigherPos="-1" mapWidth="-1" mapHeight="-1" mapKByteInDoc="0" mapWrapIndentMode="-1" mapIsWrap="no" />
+        </mainView>
+        <subView activeIndex="0" />
+    </Session>
+</NotepadPlus>
