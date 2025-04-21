@@ -3,19 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>亂叫姓名和取糕點暱稱機器人</title>
+  <title>聊天機器人</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       background-color: #f0f8ff;
-      text-align: center;
       padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      color: #333;
+    }
+    .chatbox {
+      margin-top: 30px;
+      font-size: 18px;
     }
     .output {
-      margin-top: 20px;
       font-size: 24px;
       font-weight: bold;
       color: #ff6347;
+      margin-top: 20px;
+    }
+    input[type="text"] {
+      padding: 10px;
+      font-size: 16px;
+      width: 60%;
+      margin-top: 10px;
     }
     button {
       padding: 10px 20px;
@@ -32,16 +45,17 @@
 </head>
 <body>
 
-  <h1>歡迎來到亂叫姓名和取糕點暱稱的聊天機器人</h1>
-  <p>按下按鈕，讓我幫你取個有趣的暱稱吧！</p>
-  <button onclick="generateNickname()">生成暱稱</button>
+  <h1>聊天機器人 - 隨機稱呼與糕點暱稱生成</h1>
+  <p>請輸入您的姓名，我會隨機稱呼您並為您取個有趣的糕點暱稱！</p>
+
+  <div class="chatbox">
+    <input type="text" id="userName" placeholder="請輸入姓名">
+    <button onclick="generateNickname()">提交</button>
+  </div>
 
   <div class="output" id="nicknameOutput"></div>
 
   <script>
-    // 用來亂叫的姓名列表
-    const names = ["小明", "小華", "小莉", "小梅", "小陳", "小李", "小張", "小王", "小杜", "小蔡"];
-    
     // 用來隨機生成的糕點名稱
     const desserts = [
       "蜂蜜草莓小蛋糕",
@@ -56,15 +70,23 @@
       "香蕉奶油麵包"
     ];
 
-    // 生成暱稱的函數
+    // 生成隨機暱稱的函數
     function generateNickname() {
-      // 隨機選擇姓名和糕點
-      const randomName = names[Math.floor(Math.random() * names.length)];
+      const userName = document.getElementById('userName').value.trim();
+      
+      if (userName === "") {
+        alert("請輸入姓名！");
+        return;
+      }
+
+      // 隨機選擇一個糕點名稱
       const randomDessert = desserts[Math.floor(Math.random() * desserts.length)];
 
-      // 顯示生成的暱稱
-      const nickname = randomName + "的" + randomDessert;
-      document.getElementById("nicknameOutput").innerText = nickname;
+      // 組合隨機生成的暱稱
+      const nickname = userName + "的" + randomDessert;
+
+      // 顯示結果
+      document.getElementById("nicknameOutput").innerText = `嘿，${userName}！你的暱稱是：${nickname}`;
     }
   </script>
 
