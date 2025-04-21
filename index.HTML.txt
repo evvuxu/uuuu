@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>聊天機器人</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+        #chat {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            background-color: #fff;
+            max-width: 400px;
+        }
+        #output {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>糕點暱稱聊天機器人</h1>
+<button id="generate">叫我隨機姓名和暱稱</button>
+<div id="chat">
+    <div id="output"></div>
+</div>
+
+<script>
+    const names = ["小明", "小華", "小美", "小李", "小王"];
+    const nicknames = [
+        "蜂蜜草莓小蛋糕",
+        "巧克力餅乾",
+        "香草奶油泡芙",
+        "藍莓鬆餅",
+        "抹茶蛋糕",
+        "檸檬塔",
+        "榛果巧克力蛋糕",
+        "焦糖布丁",
+        "水果撻",
+        "奶酪蛋糕"
+    ];
+
+    document.getElementById("generate").addEventListener("click", function() {
+        const name = names[Math.floor(Math.random() * names.length)];
+        const nickname = nicknames[Math.floor(Math.random() * nicknames.length)];
+        const message = `嘿！${name}，你現在的暱稱是：${nickname}！`;
+        
+        const outputDiv = document.getElementById("output");
+        outputDiv.innerHTML += `<p>${message}</p>`;
+    });
+</script>
+
+</body>
+</html>
